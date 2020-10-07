@@ -13,14 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-//dd(\Illuminate\Support\Facades\DB::table('user')->get());
-//dd();
-//    return \Illuminate\Support\Facades\Cache::put('heihei','hello phpredis');
-    return \Illuminate\Support\Facades\Cache::get('heihei');
-});
+Route::get('/', 'StaticPagesController@home');
+Route::get('/help', 'StaticPagesController@help');
+Route::get('/about', 'StaticPagesController@about');
 
 
-Route::get('/hello/{name}','TestController@cache');
-Route::get('/hello','TestController@get');
